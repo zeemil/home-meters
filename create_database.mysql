@@ -1,0 +1,70 @@
+drop database if exists home_meters;
+CREATE DATABASE home_meters CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+use home_meters;
+
+CREATE TABLE meters(
+	id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+	type_id BIGINT UNSIGNED NOT NULL,
+	ean_code VARCHAR (255) NOT NULL,
+	PRIMARY KEY(id)
+);
+
+CREATE TABLE readings(
+	id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+	unit_id BIGINT UNSIGNED NOT NULL,
+	meter_id BIGINT UNSIGNED NOT NULL,
+	value decimal(10,3) NOT NULL,
+	PRIMARY KEY(id)
+);
+
+CREATE TABLE units(
+	id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+	name VARCHAR (255) NOT NULL,
+	si_abbrev VARCHAR (4) NOT NULL,
+	PRIMARY KEY(id)
+);
+
+CREATE TABLE meter_types(
+	id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+	name VARCHAR (255) NOT NULL,
+	PRIMARY KEY(id)
+);
+
+CREATE TABLE locations(
+	id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+	street VARCHAR (255) NULL,
+	zip VARCHAR (10)  NULL,
+	city VARCHAR (255) NULL,
+	note TEXT,
+	PRIMARY KEY(id)
+);
+
+ALTER TABLE meters
+    ADD CONSTRAINT FOREIGN KEY
+    type_id (type_id)
+    REFERENCES meter_types (id)
+    ON DELETE restrict 
+    ON UPDATE restrict;
+	
+ALTER TABLE readings
+    ADD CONSTRAINT FOREIGN KEY
+    meter_id (meter_id)
+    REFERENCES meters (id)
+    ON DELETE restrict 
+    ON UPDATE restrict;
+	
+ALTER TABLE readings
+    ADD CONSTRAINT FOREIGN KEY
+    unit_id (unit_id)
+    REFERENCES units (id)
+    ON DELETE restrict 
+    ON UPDATE restrict;
+	
+INSERT INTO units(name, si_abbrev) values
+('kilowatt', 'kw'),
+('cubic meter', 'm³');
+
+INSERT INTO meter_types(name) values
+('water'),
+('electrcity'),
+('gaz');
