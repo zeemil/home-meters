@@ -1111,8 +1111,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGQVO3NLUnKBuQ="
 							},
-							"name": "note",
-							"type": "TEXT",
+							"name": "label",
+							"type": "VARCHAR",
 							"length": 0
 						}
 					]

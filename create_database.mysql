@@ -7,7 +7,9 @@ CREATE TABLE meters(
 	type_id BIGINT UNSIGNED NOT NULL,
 	location_id BIGINT UNSIGNED NOT NULL,
 	ean_code VARCHAR (255) NOT NULL,
-	note TEXT NULL, 
+	label VARCHAR(255) NOT NULL, 
+	index (label),
+	index(ean_code),
 	PRIMARY KEY(id)
 );
 
