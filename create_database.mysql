@@ -5,7 +5,9 @@ use home_meters;
 CREATE TABLE meters(
 	id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
 	type_id BIGINT UNSIGNED NOT NULL,
+	location_id BIGINT UNSIGNED NOT NULL,
 	ean_code VARCHAR (255) NOT NULL,
+	note TEXT NULL, 
 	PRIMARY KEY(id)
 );
 
@@ -14,6 +16,11 @@ CREATE TABLE readings(
 	unit_id BIGINT UNSIGNED NOT NULL,
 	meter_id BIGINT UNSIGNED NOT NULL,
 	value decimal(10,3) NOT NULL,
+	isOfficial BOOLEAN NULL DEFAULT NULL,
+	created_at TIMESTAMP NOT NULL,
+	index(value),
+	index(created_at),
+	index(isOfficial),
 	PRIMARY KEY(id)
 );
 
@@ -46,6 +53,13 @@ ALTER TABLE meters
     ON DELETE restrict 
     ON UPDATE restrict;
 	
+ALTER TABLE meters
+    ADD CONSTRAINT FOREIGN KEY
+    location_id (location_id)
+    REFERENCES locations (id)
+    ON DELETE restrict 
+    ON UPDATE restrict;
+	
 ALTER TABLE readings
     ADD CONSTRAINT FOREIGN KEY
     meter_id (meter_id)
@@ -60,11 +74,12 @@ ALTER TABLE readings
     ON DELETE restrict 
     ON UPDATE restrict;
 	
-INSERT INTO units(name, si_abbrev) values
-('kilowatt', 'kw'),
-('cubic meter', 'm³');
+INSERT INTO units(id, name, si_abbrev) values
+(1,'kilowatthour', 'kw/h'),
+(2, 'cubic meter', 'm³');
 
-INSERT INTO meter_types(name) values
-('water'),
-('electrcity'),
-('gaz');
+INSERT INTO meter_types(id, name) values
+(1,'water'),
+(2,'daylight electrcity'),
+(3,'night electrcity'),
+(4,'gaz');
