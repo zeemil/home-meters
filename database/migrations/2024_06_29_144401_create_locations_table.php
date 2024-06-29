@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('zip', 10)->nullable();
             $table->string('city')->nullable();
             $table->text('note')->nullable();
+            $table->timestamps();
         });
     }
 

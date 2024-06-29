@@ -17,6 +17,7 @@ return new class extends Migration
             $table->unsignedBigInteger('location_id')->index('location_id');
             $table->string('ean_code')->index('ean_code');
             $table->string('label')->index('label');
+            $table->timestamps();
         });
     }
 
