@@ -2,19 +2,26 @@
 
 namespace Tests\Feature\Models;
 
+use App\Models\Location;
+use App\Models\Meter;
+use App\Models\Reading;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
+use PHPUnit\Framework\Attributes\Test;
 use Tests\TestCase;
 
 class ReadingTest extends TestCase
 {
-    /**
-     * A basic feature test example.
-     */
-    public function test_example(): void
+    #[Test]
+    public function it_creates_a_reading_for_a_meter(): void
     {
-        $response = $this->get('/');
-
-        $response->assertStatus(200);
+        
+        Location::factory()
+        ->has(
+                Meter::factory()
+                ->has(Reading::factory()->count(10)))
+        ->create();
+    
+        $this->assertDatabaseCount('readings', 10);
     }
 }
