@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::table('meters', function (Blueprint $table) {
             $table->foreign(['location_id'], 'location_id')->references(['id'])->on('locations')->onUpdate('restrict')->onDelete('restrict');
-            $table->foreign(['type_id'], 'type_id')->references(['id'])->on('meter_types')->onUpdate('restrict')->onDelete('restrict');
+    
         });
     }
 
@@ -24,7 +24,6 @@ return new class extends Migration
     {
         Schema::table('meters', function (Blueprint $table) {
             $table->dropForeign('location_id');
-            $table->dropForeign('type_id');
         });
     }
 };

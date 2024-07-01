@@ -6,6 +6,7 @@ use App\Models\Location;
 use App\Models\Meter;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
+use PHPUnit\Framework\Attributes\Test;
 use Tests\TestCase;
 
 class LocationTest extends TestCase
@@ -13,9 +14,7 @@ class LocationTest extends TestCase
 
     use RefreshDatabase;
 
-    /**
-     * @test
-     */
+    #[Test]
     public function it_creates_a_location(): void
     {
         $location = Location::factory()->create();
@@ -23,9 +22,7 @@ class LocationTest extends TestCase
         $this->assertDatabaseHas('locations', $location->toArray());
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function it_creates_a_location_with_multiple_meters(): void
     {
         $location = Location::factory()

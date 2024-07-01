@@ -13,10 +13,9 @@ return new class extends Migration
     {
         Schema::create('meters', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('type_id')->index('type_id');
             $table->unsignedBigInteger('location_id')->index('location_id');
             $table->string('ean_code')->index('ean_code');
-            $table->string('label')->index('label');
+            $table->string('name')->index('name');
             $table->timestamps();
         });
     }

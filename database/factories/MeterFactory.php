@@ -19,7 +19,7 @@ class MeterFactory extends Factory
     {
         return [
             'ean_code' => fake()->randomNumber(),
-            'label' => fake()->text(),
+            'name' => fake()->text(),
         ];
     }
 }
