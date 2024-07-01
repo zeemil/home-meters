@@ -3,10 +3,10 @@ INSERT into locations (id, street, zip, city, note) values
 (1,'rue du Gazomètre 34','6061','Montignies-sur-Sambre', null);
 
 
-insert into meters(id,ean_code, location_id, type_id, note) values
-(1,'541449020706144924', 1,2,'électricité jour'),
-(2,'541449020706144924', 1,3, 'électricité nuit'),
-(3,'541449020706144931', 1,4, 'gaz');
+insert into meters(id,ean_code, name, location_id) values
+(1,'541449020706144924','électricité jour',1),
+(2,'541449020706144924' , 'électricité nuit', 1),
+(3,'541449020706144931', 'gaz', 1);
 
 /* électricité jour */
 insert into readings (unit_id, meter_id, value, isOfficial, created_at) values(1,1,4533,0,'2024-05-25');

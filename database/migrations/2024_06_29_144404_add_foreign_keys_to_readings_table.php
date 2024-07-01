@@ -13,7 +13,6 @@ return new class extends Migration
     {
         Schema::table('readings', function (Blueprint $table) {
             $table->foreign(['meter_id'], 'meter_id')->references(['id'])->on('meters')->onUpdate('restrict')->onDelete('restrict');
-            $table->foreign(['unit_id'], 'unit_id')->references(['id'])->on('units')->onUpdate('restrict')->onDelete('restrict');
         });
     }
 
