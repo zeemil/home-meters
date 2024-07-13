@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Feature;
+namespace Tests\Feature\Models;
 
 use App\Models\Location;
 use App\Models\Meter;
@@ -15,6 +15,7 @@ class LocationTest extends TestCase
     use RefreshDatabase;
 
     #[Test]
+    /** @test **/
     public function it_creates_a_location(): void
     {
         $location = Location::factory()->create();
