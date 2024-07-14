@@ -11,10 +11,6 @@
 @section('content')
 
    <h1> Locations</h1>
-   
-    <ul>
-    @foreach ($locations as $location)
-        <li>{{ $location->street }}, {{ $location->zip  }}, {{ $location->city }}</li>
-    @endforeach
-    </ul>
+
+    @livewire('location.index')
 @endsection
