@@ -7,7 +7,8 @@
             <th>{{ __('City') }}</th>
             <th>{{ __('Actions') }}</th>
         </tr>
-        @foreach ($locations as $location)
+
+        @forelse ( $locations as $location )
         <tr>
             <td>{{$location->id}}</td>
             <td>{{ $location->street }}</td>
@@ -15,6 +16,11 @@
             <td>{{ $location->city }}</td>
             <td>meters</td>
         </tr>
-        @endforeach
+        @empty
+            <tr>
+                <td colspan="5">{{ __('add location') }}</td>
+            </tr>
+        @endforelse
+        
     </ul>
 </div>
