@@ -14,13 +14,11 @@ class LocationTest extends TestCase
 
     use RefreshDatabase;
 
-    #[Test]
-    /** @test **/
-    public function it_creates_a_location(): void
+    public function test_it_creates_a_location(): void
     {
         $location = Location::factory()->create();
 
-        $this->assertDatabaseHas('locations', $location->toArray());
+        $this->assertDatabaseHas('locations',$location->toArray());
     }
 
     #[Test]

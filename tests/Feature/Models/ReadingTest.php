@@ -12,8 +12,9 @@ use Tests\TestCase;
 
 class ReadingTest extends TestCase
 {
-    #[Test]
-    public function it_creates_a_reading_for_a_meter(): void
+    use RefreshDatabase;
+    
+    public function test_it_creates_a_reading_for_a_meter(): void
     {
         
         Location::factory()

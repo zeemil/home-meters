@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
-class Location extends Model
+class Location extends BaseModel
 {
     use HasFactory;
    
@@ -14,4 +14,5 @@ class Location extends Model
     {
         return $this->hasMany(Meter::class);
     }
+
 }
