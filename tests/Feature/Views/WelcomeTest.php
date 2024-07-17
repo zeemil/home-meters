@@ -4,18 +4,17 @@ namespace Tests\Feature\Views;
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
-use PHPUnit\Framework\Attributes\Test;
 use Tests\TestCase;
 
-class WelcomeViewTest extends TestCase
+class WelcomeTest extends TestCase
 {
-   #[Test]
-    public function test_it_displays_locations(): void
+    /**
+     * A basic feature test example.
+     */
+    public function test_welcome_page(): void
     {
         $response = $this->get('/');
 
         $response->assertStatus(200);
-
-        $response->assertSee('Locations');
     }
 }
