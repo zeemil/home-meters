@@ -4,7 +4,7 @@
 
 
 @section('content')
-   <ul>
+   <ul class="bg-gray-50">
     <li>Meters</li>
     <li>Car</li>
    </ul>

@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Locations')
+@section('title', ' > '.__('Locations'))
 
 @section('sidebar')
     @parent
