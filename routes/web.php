@@ -6,7 +6,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function(){ 
     $links = [
         'Meters' => route('locations.index'),
-        'Cars' => '/',
+        'Cars' =>
+         '/',
     ];
     return view('Welcome', compact('links'));
  });

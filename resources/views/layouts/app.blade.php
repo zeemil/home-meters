@@ -8,12 +8,11 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
     <body>
+    <div>
+        <a href="/">{{__('Home')}}</a>
+    </div>
 
-    @section('sidebar')
-        This is the master sidebar.
-    @show
-
-    <div class="container">
+    <div class="mt-20 ml-10">
         @yield('content')
     </div>
     
