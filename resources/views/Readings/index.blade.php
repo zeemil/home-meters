@@ -53,8 +53,6 @@ $headers = [
             {{ $reading->created_at }}</td>
         <td class="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 darkclass:text-slate-400">
             {{ $reading->updated_at }}</td>
-        <td class="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 darkclass:text-slate-400">
-            <a href="/meters/1/readings/1">edit</a></td>
     </tr>
     
     @empty

@@ -49,7 +49,7 @@ $headers = [
         <td class="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 darkclass:text-slate-400">
             {{ $location->city }}</td>
         <td class="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 darkclass:text-slate-400">
-            <a href="/location/1/meters">meters</a></td>
+            <a href="{{ route('meters.index',['location' => $location->id])}}">meters</a></td>
     </tr>
     
     @empty

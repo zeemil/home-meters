@@ -8,7 +8,8 @@ $headers = [
     __('Code EAN'),
     __('Name'),
     __('Created at'),
-    __('Updated at')
+    __('Updated at'),
+    __('Action')
 ];
 @endphp
 @section('content')
@@ -51,13 +52,13 @@ $headers = [
         <td class="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 darkclass:text-slate-400">
             {{ $meter->updated_at }}</td>
         <td class="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 darkclass:text-slate-400">
-            <a href="/meters/1/readings">readings</a></td>
+            <a href="{{ route('readings.index',['meter' => $meter->id])}}">readings</a></td>
     </tr>
     
     @empty
 
         <tr>
-            <td colspan="5">{{ __('add location') }}</td>
+            <td colspan="5">{{ __('add meter') }}</td>
         </tr>
 
     @endforelse
