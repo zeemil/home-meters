@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\LocationController;
+use App\Http\Controllers\MeterConntroller;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function(){ 
@@ -14,3 +15,8 @@ Route::get('/', function(){
 Route::resource('locations', LocationController::class)->only([
     'index', 'create'
 ]);
+
+Route::resource('location/{location}/meters', MeterConntroller::class)->only([
+    'index'
+]);
+

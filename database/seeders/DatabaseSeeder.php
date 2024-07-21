@@ -7,6 +7,7 @@ use App\Models\Meter;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
 
 class DatabaseSeeder extends Seeder
@@ -17,11 +18,12 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         Location::factory()->create();
+        $now = Carbon::now()->format('Y-m-d H:i:s');
         
         DB::unprepared('insert into meters(id,ean_code, name, location_id, created_at, updated_at) values
-        (1,"541449020706144924", "électricité jour",1, NOW(), NOW()),
-        (2,"541449020706144924", "électricité nuit", 1, NOW(), NOW()),
-        (3,"541449020706144931", "gaz", 1, NOW(), NOW())');
+        (1,"541449020706144924", "électricité jour",1, \''.$now.'\', \''.$now.'\'),
+        (2,"541449020706144924", "électricité nuit", 1, \''.$now.'\', \''.$now.'\'),
+        (3,"541449020706144931", "gaz", 1, \''.$now.'\', \''.$now.'\')');
         
         DB::unprepared('insert into readings ( meter_id, value, unit, isOfficial, created_at) values(1,4635, "kWh", 0,"2024-06-14")');
         DB::unprepared('insert into readings ( meter_id, value, unit, isOfficial, created_at) values(1,4533, "kWh", 0,"2024-05-25")');
