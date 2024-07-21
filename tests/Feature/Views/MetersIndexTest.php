@@ -11,10 +11,8 @@ use App\Models\Meter;
 class MetersIndexTest extends TestCase
 {
     use RefreshDatabase;
-    /**
-     * A basic feature test example.
-     */
-    public function test_meters_index_page(): void
+
+    public function test_meters_index(): void
     {
 
         Location::factory()
@@ -24,5 +22,6 @@ class MetersIndexTest extends TestCase
         $response = $this->get('/location/1/meters');
 
         $response->assertStatus(200);
+        $response->assertSee('Meters for location :');
     }
 }

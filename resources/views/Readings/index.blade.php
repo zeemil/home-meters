@@ -1,12 +1,13 @@
 @extends('layouts.app')
 
-@section('title', ' > '.__('Meters for location') .':'.  $location->id)
+@section('title', ' > '.__('Readings for meter') .':'.  $meter->ean_code)
 
 @php
 $headers = [
     __('ID'),
-    __('Code EAN'),
-    __('Name'),
+    __('value'),
+    __('Unit'),
+    __('Is Official'),
     __('Created at'),
     __('Updated at')
 ];
@@ -15,7 +16,7 @@ $headers = [
  
     
 
-   <h1 class="text-lg font-bold">{{__('Meters for location').' : '.  $location->street . ' '.$location->city}}</h1>
+   <h1 class="text-lg font-bold">{{__('Readings for meter').' : '.  $meter->ean_code }}</h1>
    
    <table class="table-auto w-">
     <thead>
@@ -37,27 +38,29 @@ $headers = [
 
     <tbody>
 
-    @forelse ( $location->meters as $meter )
+    @forelse ( $meter->readings as $reading )
 
     <tr>
         <td class="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 darkclass:text-slate-400">
-            {{$meter->id}}</td>
+            {{$reading->id}}</td>
         <td class="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 darkclass:text-slate-400">
-            {{ $meter->ean_code }}</td>
+            {{ $reading->value }}</td>
         <td class="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 darkclass:text-slate-400">
-            {{ $meter->name  }}</td>
+            {{ $reading->unit  }}</td>
         <td class="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 darkclass:text-slate-400">
-            {{ $meter->created_at }}</td>
+            {{ $reading->is_official  }}</td>
         <td class="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 darkclass:text-slate-400">
-            {{ $meter->updated_at }}</td>
+            {{ $reading->created_at }}</td>
         <td class="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 darkclass:text-slate-400">
-            <a href="/meters/1/readings">readings</a></td>
+            {{ $reading->updated_at }}</td>
+        <td class="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 darkclass:text-slate-400">
+            <a href="/meters/1/readings/1">edit</a></td>
     </tr>
     
     @empty
 
         <tr>
-            <td colspan="5">{{ __('add location') }}</td>
+            <td colspan="5">{{ __('add reading') }}</td>
         </tr>
 
     @endforelse
