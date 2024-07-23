@@ -64,46 +64,47 @@ class DatabaseSeeder extends Seeder
         DB::unprepared('insert into readings ( meter_id, value, unit, isOfficial, created_at) values(1,2727, "kWh", 0,"2023-01-02")');
         DB::unprepared('insert into readings ( meter_id, value, unit, isOfficial, created_at) values(1,2727, "kWh", 1,"2023-01-01")');
         
-        DB::unprepared('insert into readings ( meter_id, value, unit, isOfficial, created_at) values(1,4192, "kWh", 0,"2024-06-14")');
-        DB::unprepared('insert into readings ( meter_id, value, unit, isOfficial, created_at) values(1,4125, "kWh", 0,"2024-05-25")');
-        DB::unprepared('insert into readings ( meter_id, value, unit, isOfficial, created_at) values(1,4009, "kWh", 0,"2024-04-24")');
-        DB::unprepared('insert into readings ( meter_id, value, unit, isOfficial, created_at) values(1,3834, "kWh", 0,"2024-03-17")');
-        DB::unprepared('insert into readings ( meter_id, value, unit, isOfficial, created_at) values(1,3729, "kWh", 0,"2024-03-01")');
-        DB::unprepared('insert into readings ( meter_id, value, unit, isOfficial, created_at) values(1,3583, "kWh", 0,"2024-02-01")');
-        DB::unprepared('insert into readings ( meter_id, value, unit, isOfficial, created_at) values(1,3496, "kWh", 0,"2024-01-18")');
-        DB::unprepared('insert into readings ( meter_id, value, unit, isOfficial, created_at) values(1,3454, "kWh", 0,"2024-01-10")');
-        DB::unprepared('insert into readings ( meter_id, value, unit, isOfficial, created_at) values(1,3429, "kWh", 1,"2024-01-01")');
-        DB::unprepared('insert into readings ( meter_id, value, unit, isOfficial, created_at) values(1,3338, "kWh", 0,"2023-12-04")');
-        DB::unprepared('insert into readings ( meter_id, value, unit, isOfficial, created_at) values(1,3292, "kWh", 0,"2023-11-26")');
-        DB::unprepared('insert into readings ( meter_id, value, unit, isOfficial, created_at) values(1,3266, "kWh", 0,"2023-11-21")');
-        DB::unprepared('insert into readings ( meter_id, value, unit, isOfficial, created_at) values(1,3204, "kWh", 0,"2023-11-08")');
-        DB::unprepared('insert into readings ( meter_id, value, unit, isOfficial, created_at) values(1,3179, "kWh", 0,"2023-11-02")');
-        DB::unprepared('insert into readings ( meter_id, value, unit, isOfficial, created_at) values(1,3115, "kWh", 0,"2023-10-18")');
-        DB::unprepared('insert into readings ( meter_id, value, unit, isOfficial, created_at) values(1,3067, "kWh", 0,"2023-10-02")');
-        DB::unprepared('insert into readings ( meter_id, value, unit, isOfficial, created_at) values(1,3017, "kWh", 0,"2023-09-19")');
-        DB::unprepared('insert into readings ( meter_id, value, unit, isOfficial, created_at) values(1,2972, "kWh", 0,"2023-09-04")');
-        DB::unprepared('insert into readings ( meter_id, value, unit, isOfficial, created_at) values(1,2899, "kWh", 0,"2023-08-12")');
-        DB::unprepared('insert into readings ( meter_id, value, unit, isOfficial, created_at) values(1,2863, "kWh", 0,"2023-07-03")');
-        DB::unprepared('insert into readings ( meter_id, value, unit, isOfficial, created_at) values(1,2793, "kWh", 0,"2023-06-13")');
-        DB::unprepared('insert into readings ( meter_id, value, unit, isOfficial, created_at) values(1,2732, "kWh", 0,"2023-05-28")');
-        DB::unprepared('insert into readings ( meter_id, value, unit, isOfficial, created_at) values(1,2704, "kWh", 0,"2023-05-20")');
-        DB::unprepared('insert into readings ( meter_id, value, unit, isOfficial, created_at) values(1,2663, "kWh", 0,"2023-05-10")');
-        DB::unprepared('insert into readings ( meter_id, value, unit, isOfficial, created_at) values(1,2637, "kWh", 0,"2023-05-02")');
-        DB::unprepared('insert into readings ( meter_id, value, unit, isOfficial, created_at) values(1,2614, "kWh", 0,"2023-04-25")');
-        DB::unprepared('insert into readings ( meter_id, value, unit, isOfficial, created_at) values(1,2563, "kWh", 0,"2023-04-13")');
-        DB::unprepared('insert into readings ( meter_id, value, unit, isOfficial, created_at) values(1,2538, "kWh", 0,"2023-04-06")');
-        DB::unprepared('insert into readings ( meter_id, value, unit, isOfficial, created_at) values(1,2510, "kWh", 0,"2023-03-31")');
-        DB::unprepared('insert into readings ( meter_id, value, unit, isOfficial, created_at) values(1,2470, "kWh", 0,"2023-03-17")');
-        DB::unprepared('insert into readings ( meter_id, value, unit, isOfficial, created_at) values(1,2441, "kWh", 0,"2023-03-10")');
-        DB::unprepared('insert into readings ( meter_id, value, unit, isOfficial, created_at) values(1,2412, "kWh", 0,"2023-03-02")');
-        DB::unprepared('insert into readings ( meter_id, value, unit, isOfficial, created_at) values(1,2403, "kWh", 0,"2023-02-26")');
-        DB::unprepared('insert into readings ( meter_id, value, unit, isOfficial, created_at) values(1,2389, "kWh", 0,"2023-02-22")');
-        DB::unprepared('insert into readings ( meter_id, value, unit, isOfficial, created_at) values(1,2365, "kWh", 0,"2023-02-14")');
-        DB::unprepared('insert into readings ( meter_id, value, unit, isOfficial, created_at) values(1,2348, "kWh", 0,"2023-02-10")');
-        DB::unprepared('insert into readings ( meter_id, value, unit, isOfficial, created_at) values(1,2266, "kWh", 0,"2023-01-02")');
-        DB::unprepared('insert into readings ( meter_id, value, unit, isOfficial, created_at) values(1,2265, "kWh", 1,"2023-01-01")');
-        
-        
+
+        DB::unprepared('insert into readings ( meter_id, value, unit, isOfficial, created_at) values(2,4192, "kWh", 0,"2024-06-14")');
+        DB::unprepared('insert into readings ( meter_id, value, unit, isOfficial, created_at) values(2,4125, "kWh", 0,"2024-05-25")');
+        DB::unprepared('insert into readings ( meter_id, value, unit, isOfficial, created_at) values(2,4009, "kWh", 0,"2024-04-24")');
+        DB::unprepared('insert into readings ( meter_id, value, unit, isOfficial, created_at) values(2,3834, "kWh", 0,"2024-03-17")');
+        DB::unprepared('insert into readings ( meter_id, value, unit, isOfficial, created_at) values(2,3729, "kWh", 0,"2024-03-01")');
+        DB::unprepared('insert into readings ( meter_id, value, unit, isOfficial, created_at) values(2,3583, "kWh", 0,"2024-02-01")');
+        DB::unprepared('insert into readings ( meter_id, value, unit, isOfficial, created_at) values(2,3496, "kWh", 0,"2024-01-18")');
+        DB::unprepared('insert into readings ( meter_id, value, unit, isOfficial, created_at) values(2,3454, "kWh", 0,"2024-01-10")');
+        DB::unprepared('insert into readings ( meter_id, value, unit, isOfficial, created_at) values(2,3429, "kWh", 1,"2024-01-01")');
+        DB::unprepared('insert into readings ( meter_id, value, unit, isOfficial, created_at) values(2,3338, "kWh", 0,"2023-12-04")');
+        DB::unprepared('insert into readings ( meter_id, value, unit, isOfficial, created_at) values(2,3292, "kWh", 0,"2023-11-26")');
+        DB::unprepared('insert into readings ( meter_id, value, unit, isOfficial, created_at) values(2,3266, "kWh", 0,"2023-11-21")');
+        DB::unprepared('insert into readings ( meter_id, value, unit, isOfficial, created_at) values(2,3204, "kWh", 0,"2023-11-08")');
+        DB::unprepared('insert into readings ( meter_id, value, unit, isOfficial, created_at) values(2,3179, "kWh", 0,"2023-11-02")');
+        DB::unprepared('insert into readings ( meter_id, value, unit, isOfficial, created_at) values(2,3115, "kWh", 0,"2023-10-18")');
+        DB::unprepared('insert into readings ( meter_id, value, unit, isOfficial, created_at) values(2,3067, "kWh", 0,"2023-10-02")');
+        DB::unprepared('insert into readings ( meter_id, value, unit, isOfficial, created_at) values(2,3017, "kWh", 0,"2023-09-19")');
+        DB::unprepared('insert into readings ( meter_id, value, unit, isOfficial, created_at) values(2,2972, "kWh", 0,"2023-09-04")');
+        DB::unprepared('insert into readings ( meter_id, value, unit, isOfficial, created_at) values(2,2899, "kWh", 0,"2023-08-12")');
+        DB::unprepared('insert into readings ( meter_id, value, unit, isOfficial, created_at) values(2,2863, "kWh", 0,"2023-07-03")');
+        DB::unprepared('insert into readings ( meter_id, value, unit, isOfficial, created_at) values(2,2793, "kWh", 0,"2023-06-13")');
+        DB::unprepared('insert into readings ( meter_id, value, unit, isOfficial, created_at) values(2,2732, "kWh", 0,"2023-05-28")');
+        DB::unprepared('insert into readings ( meter_id, value, unit, isOfficial, created_at) values(2,2704, "kWh", 0,"2023-05-20")');
+        DB::unprepared('insert into readings ( meter_id, value, unit, isOfficial, created_at) values(2,2663, "kWh", 0,"2023-05-10")');
+        DB::unprepared('insert into readings ( meter_id, value, unit, isOfficial, created_at) values(2,2637, "kWh", 0,"2023-05-02")');
+        DB::unprepared('insert into readings ( meter_id, value, unit, isOfficial, created_at) values(2,2614, "kWh", 0,"2023-04-25")');
+        DB::unprepared('insert into readings ( meter_id, value, unit, isOfficial, created_at) values(2,2563, "kWh", 0,"2023-04-13")');
+        DB::unprepared('insert into readings ( meter_id, value, unit, isOfficial, created_at) values(2,2538, "kWh", 0,"2023-04-06")');
+        DB::unprepared('insert into readings ( meter_id, value, unit, isOfficial, created_at) values(2,2510, "kWh", 0,"2023-03-31")');
+        DB::unprepared('insert into readings ( meter_id, value, unit, isOfficial, created_at) values(2,2470, "kWh", 0,"2023-03-17")');
+        DB::unprepared('insert into readings ( meter_id, value, unit, isOfficial, created_at) values(2,2441, "kWh", 0,"2023-03-10")');
+        DB::unprepared('insert into readings ( meter_id, value, unit, isOfficial, created_at) values(2,2412, "kWh", 0,"2023-03-02")');
+        DB::unprepared('insert into readings ( meter_id, value, unit, isOfficial, created_at) values(2,2403, "kWh", 0,"2023-02-26")');
+        DB::unprepared('insert into readings ( meter_id, value, unit, isOfficial, created_at) values(2,2389, "kWh", 0,"2023-02-22")');
+        DB::unprepared('insert into readings ( meter_id, value, unit, isOfficial, created_at) values(2,2365, "kWh", 0,"2023-02-14")');
+        DB::unprepared('insert into readings ( meter_id, value, unit, isOfficial, created_at) values(2,2348, "kWh", 0,"2023-02-10")');
+        DB::unprepared('insert into readings ( meter_id, value, unit, isOfficial, created_at) values(2,2266, "kWh", 0,"2023-01-02")');
+        DB::unprepared('insert into readings ( meter_id, value, unit, isOfficial, created_at) values(2,2265, "kWh", 1,"2023-01-01")');
+
+
         DB::unprepared('insert into readings ( meter_id, value, unit, isOfficial, created_at) values(3,26132, "m³", 0,"2024-06-14")');
         DB::unprepared('insert into readings ( meter_id, value, unit, isOfficial, created_at) values(3,26092, "m³", 0,"2024-05-25")');
         DB::unprepared('insert into readings ( meter_id, value, unit, isOfficial, created_at) values(3,26041, "m³", 0,"2024-04-24")');
@@ -140,8 +141,6 @@ class DatabaseSeeder extends Seeder
         DB::unprepared('insert into readings ( meter_id, value, unit, isOfficial, created_at) values(3,24273, "m³", 0,"2023-02-14")');
         DB::unprepared('insert into readings ( meter_id, value, unit, isOfficial, created_at) values(3,24242, "m³", 0,"2023-02-10")');
         DB::unprepared('insert into readings ( meter_id, value, unit, isOfficial, created_at) values(3,23968, "m³", 1,"2023-01-01")');
-        
-        
-            
+
     }
 }
