@@ -14,13 +14,7 @@ $headers = [
 @endphp
 
 @section('json-data')
-    const data = [
-      { created_at: '2024-06-14', value: 4635 },
-      { created_at: '2024-05-25', value: 4533 },
-      { created_at: '2024-04-24', value: 4434 },
-      { created_at: '2024-03-17', value: 4243 },
-      { created_at: '2024-03-01', value: 4160 },
-    ];
+    const data = {!! $meter->readings->toJson() !!}
 @endsection
 
 @push('scripts')
