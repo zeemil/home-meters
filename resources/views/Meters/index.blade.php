@@ -12,10 +12,8 @@ $headers = [
     __('Action')
 ];
 @endphp
-@section('content')
- 
-    
 
+@section('content')
    <h1 class="text-lg font-bold">{{__('Meters for location').' : '.  $location->street . ' '.$location->city}}</h1>
    
    <table class="table-auto w-">
@@ -64,6 +62,6 @@ $headers = [
     @endforelse
 
     </tbody>
-    
+   </table>
 
 @endsection

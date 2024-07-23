@@ -12,12 +12,26 @@ $headers = [
     __('Updated at')
 ];
 @endphp
+
+@section('json-data')
+    const data = [
+      { created_at: '2024-06-14', value: 4635 },
+      { created_at: '2024-05-25', value: 4533 },
+      { created_at: '2024-04-24', value: 4434 },
+      { created_at: '2024-03-17', value: 4243 },
+      { created_at: '2024-03-01', value: 4160 },
+    ];
+@endsection
+
+@push('scripts')
+  @vite(['resources/js/chart.js' ])
+@endpush
+
+
 @section('content')
  
-    
-
    <h1 class="text-lg font-bold">{{__('Readings for meter').' : '.  $meter->ean_code }}</h1>
-   
+   <div style="width: 800px;"><canvas id="acquisitions"></canvas></div>
    <table class="table-auto w-">
     <thead>
     <tr>
@@ -64,6 +78,8 @@ $headers = [
     @endforelse
 
     </tbody>
-    
+   </table>
 
+   
+    
 @endsection

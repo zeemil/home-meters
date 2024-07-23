@@ -6,9 +6,16 @@
         <title>Home Meters @yield('title')</title>
         @livewireStyles
         @vite(['resources/css/app.css', 'resources/js/app.js'])
+        
+        <script>
+            @yield('json-data')
+        </script>
+        @stack('scripts')
+       
     </head>
     <body>
-    <div>
+       
+    <div class="mt-20 ml-10">
         <a href="/">{{__('Home')}}</a>
     </div>
 
