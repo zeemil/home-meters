@@ -7,7 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 
 abstract class BaseModel extends Model
 {
-
     /**
      * Prepare a date for array / JSON serialization.
      * note: introduced to be able to run tests in memory

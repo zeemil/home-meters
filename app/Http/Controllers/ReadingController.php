@@ -12,7 +12,7 @@ class ReadingController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index( Meter $meter)
+    public function index(Meter $meter)
     {
         $meter->readings()->orderByDesc('created_at')->get();
         return view('readings.index', compact('meter'));
