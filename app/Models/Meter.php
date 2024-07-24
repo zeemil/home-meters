@@ -15,7 +15,7 @@ class Meter extends BaseModel
         return $this->belongsTo(Location::class);
     }
 
-    public function readings(): HasMany
+    public function readings(): ?HasMany
     {
         return $this->hasMany(Reading::class);
     }

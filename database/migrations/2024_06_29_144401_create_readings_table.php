@@ -16,9 +16,9 @@ return new class extends Migration
             $table->id();
             $table->foreignIdFor(Meter::class);
             $table->decimal('value',10,3);
-            $table->enum('unit',['kWh', 'm³']);
             $table->boolean('isOfficial');
-            $table->timestamps();
+            $table->dateTime('date')->index();
+    
         });
     }
 

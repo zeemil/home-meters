@@ -15,6 +15,7 @@ return new class extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('location_id')->index('location_id');
             $table->string('ean_code')->index('ean_code');
+            $table->enum('unit',['kWh', 'm³']);
             $table->string('name')->index('name');
             $table->timestamps();
         });

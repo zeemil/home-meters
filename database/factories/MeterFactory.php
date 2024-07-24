@@ -18,8 +18,10 @@ class MeterFactory extends Factory
     public function definition(): array
     {
         return [
+            'location_id' => Location::factory(),
             'ean_code' => fake()->randomNumber(),
             'name' => fake()->text(),
+            'unit' => fake()->randomElement(['kWh', 'm³'])
         ];
     }
 }

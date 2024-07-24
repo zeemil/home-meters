@@ -18,8 +18,8 @@ class ReadingFactory extends Factory
     {
         return [
             'value' => fake()->numberBetween(1000,1000000),
-            'unit' => 'kWh',
             'isOfficial' => fake()->boolean(10),
+            'date' => fake()->dateTime('now')
         ];
     }
 }

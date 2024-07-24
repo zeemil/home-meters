@@ -9,6 +9,8 @@ class Reading extends BaseModel
 {
     use HasFactory;
 
+    public $timestamps = false;
+
     public function meter(): BelongsTo
     {
         return $this->belongsTo(Meter::class);
