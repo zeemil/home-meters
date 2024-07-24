@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Feature\Views;
+namespace Tests\Feature\View\Meter;
 
 use App\Models\Location;
 use App\Models\Meter;
