@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Feature\View\Readings;
+namespace Tests\Feature\View\Reading;
 
 use Tests\TestCase;
 

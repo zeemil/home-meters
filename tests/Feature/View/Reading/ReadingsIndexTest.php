@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Feature\View\Meter;
+namespace Tests\Feature\View\Reading;
 
 use App\Models\Location;
 use App\Models\Meter;
@@ -12,6 +12,23 @@ use Tests\TestCase;
 class ReadingsIndexTest extends TestCase
 {
     use RefreshDatabase;
+
+    public function test_it_can_render(): void
+    {
+        $location = Location::factory()
+        ->has(
+                Meter::factory()
+                ->has(Reading::factory()->count(10)))
+        ->create();
+
+
+        $contents = $this->view('reading.index', [
+            'meter' => $location->meters[0]
+        ]);
+
+        $contents->assertSee($location->meters[0]->ean_code);
+
+    }
   
     public function test_reading_index(): void
     {
@@ -25,5 +42,7 @@ class ReadingsIndexTest extends TestCase
 
         $response->assertStatus(200);
         $response->assertSee('Readings for meter : ');
+
+       
     }
 }
