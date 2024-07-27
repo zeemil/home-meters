@@ -16,7 +16,7 @@ $headers = [
     
 
    <h1 class="text-lg font-bold">{{__('Locations')}}</h1>
-   <a href="{{ route('locations.create') }}">add location</a>
+   <x-link href="{{ route('locations.create') }}">add location</x-link>
    <table class="table-auto w-">
     <thead>
     <tr>
@@ -49,7 +49,7 @@ $headers = [
         <td class="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 darkclass:text-slate-400">
             {{ $location->city }}</td>
         <td class="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 darkclass:text-slate-400">
-            <a href="{{ route('meters.index',['location' => $location->id])}}">meters</a></td>
+            <x-link href="{{ route('meters.index',['location' => $location->id])}}">meters</x-link></td>
     </tr>
     
     @empty

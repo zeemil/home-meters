@@ -15,11 +15,11 @@
     </head>
     <body>
        
-    <div class="mt-20 ml-10">
-        <a href="/">{{__('Home')}}</a>
+    <div class="mt-10 ml-10">
+        <x-link href="/">{{__('Home')}}</x-link>
     </div>
 
-    <div class="mt-20 ml-10">
+    <div class="mt-10 ml-10">
         @yield('content')
     </div>
     

@@ -24,7 +24,7 @@ $headers = [
 @section('content')
  
    <h1 class="text-lg font-bold">{{__('Readings for meter').' : '.  $meter->ean_code }}</h1>
-   <x-link url="{{ route('readings.create', ['meter' => $meter->id] )}}">
+   <x-link href="{{ route('readings.create', ['meter' => $meter->id] )}}">
     Add reading
    </x-link>
  
@@ -58,7 +58,7 @@ $headers = [
         <td class="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 darkclass:text-slate-400">
             {{ $reading->value }}</td>
         <td class="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 darkclass:text-slate-400">
-            {{ $reading->unit  }}</td>
+            {{ $meter->unit  }}</td>
         <td class="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 darkclass:text-slate-400">
             {{ $reading->isOfficial ? 'yes' : '' }}</td>
         <td class="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 darkclass:text-slate-400">

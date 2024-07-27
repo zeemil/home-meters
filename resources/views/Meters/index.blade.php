@@ -50,7 +50,7 @@ $headers = [
         <td class="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 darkclass:text-slate-400">
             {{ $meter->updated_at }}</td>
         <td class="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 darkclass:text-slate-400">
-            <a href="{{ route('readings.index',['meter' => $meter->id])}}">readings</a></td>
+            <x-link href="{{ route('readings.index',['meter' => $meter->id])}}">readings</x-link></td>
     </tr>
     
     @empty
