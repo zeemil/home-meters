@@ -11,14 +11,13 @@ use Tests\TestCase;
 
 class LocationTest extends TestCase
 {
-
     use RefreshDatabase;
 
     public function test_it_creates_a_location(): void
     {
         $location = Location::factory()->create();
 
-        $this->assertDatabaseHas('locations',$location->toArray());
+        $this->assertDatabaseHas('locations', $location->toArray());
     }
 
     #[Test]

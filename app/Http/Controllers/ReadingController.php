@@ -31,17 +31,17 @@ class ReadingController extends Controller
      */
     public function store(Request $request, Meter $meter)
     {
-        
+
         $validated = $request->validate([
             'value' => 'required|numeric|gt:0',
             'isOfficial' => 'required|boolean',
             'date' => 'required|date'
         ]);
 
-        
+
         $reading = $meter->readings()->create($validated);
-        
-        
+
+
         return redirect(route('readings.index', ['meter' => $meter->id]));
     }
 

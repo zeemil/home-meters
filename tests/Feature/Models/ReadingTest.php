@@ -13,16 +13,17 @@ use Tests\TestCase;
 class ReadingTest extends TestCase
 {
     use RefreshDatabase;
-    
+
     public function test_it_creates_a_reading_for_a_meter(): void
     {
-        
+
         Location::factory()
         ->has(
-                Meter::factory()
-                ->has(Reading::factory()->count(10)))
+            Meter::factory()
+            ->has(Reading::factory()->count(10))
+        )
         ->create();
-    
+
         $this->assertDatabaseCount('readings', 10);
     }
 }

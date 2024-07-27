@@ -13,8 +13,8 @@ use Illuminate\Support\Facades\DB;
 class LocationsIndexTest extends TestCase
 {
     use RefreshDatabase;
-    
-   #[Test]
+
+    #[Test]
     public function test_it_displays_locations(): void
     {
         $response = $this->get('/locations');
@@ -22,18 +22,16 @@ class LocationsIndexTest extends TestCase
         $response->assertSee('Locations');
     }
 
-    public function test_it_displays_add_location_if_the_list_is_empty():void
+    public function test_it_displays_add_location_if_the_list_is_empty(): void
     {
         $response = $this->get('/locations');
         $response->assertSee('add location');
     }
 
-    public function test_it_displays_locations_details():void
+    public function test_it_displays_locations_details(): void
     {
         $location = Location::factory()->create();
         $response = $this->get('/locations');
         $response->assertSee($location->street);
     }
-
-    
 }

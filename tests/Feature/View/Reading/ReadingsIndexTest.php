@@ -17,8 +17,9 @@ class ReadingsIndexTest extends TestCase
     {
         $location = Location::factory()
         ->has(
-                Meter::factory()
-                ->has(Reading::factory()->count(10)))
+            Meter::factory()
+            ->has(Reading::factory()->count(10))
+        )
         ->create();
 
 
@@ -27,22 +28,20 @@ class ReadingsIndexTest extends TestCase
         ]);
 
         $contents->assertSee($location->meters[0]->ean_code);
-
     }
-  
+
     public function test_the_route_is_working(): void
     {
         $location = Location::factory()
         ->has(
-                Meter::factory()
-                ->has(Reading::factory()->count(10)))
+            Meter::factory()
+            ->has(Reading::factory()->count(10))
+        )
         ->create();
 
         $response = $this->get('/meters/1/readings');
 
         $response->assertStatus(200);
         $response->assertSee('Readings for meter : ');
-
-       
     }
 }
