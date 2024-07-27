@@ -8,13 +8,12 @@ $headers = [
     __('value'),
     __('Unit'),
     __('Is Official'),
-    __('Created at'),
-    __('Updated at')
+    __('Date')
 ];
 @endphp
 
 @section('json-data')
-    const data = {!! $meter->readings->toJson() !!}
+    const data = {!! $meter->readings()->orderBy('date')->get()->toJson() !!}
 @endsection
 
 @push('scripts')
@@ -25,6 +24,11 @@ $headers = [
 @section('content')
  
    <h1 class="text-lg font-bold">{{__('Readings for meter').' : '.  $meter->ean_code }}</h1>
+   <x-link url="{{ route('readings.create', ['meter' => $meter->id] )}}">
+    Add reading
+   </x-link>
+ 
+   
    <div style="width: 800px;"><canvas id="acquisitions"></canvas></div>
    <table class="table-auto w-">
     <thead>
@@ -56,11 +60,9 @@ $headers = [
         <td class="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 darkclass:text-slate-400">
             {{ $reading->unit  }}</td>
         <td class="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 darkclass:text-slate-400">
-            {{ $reading->is_official  }}</td>
+            {{ $reading->isOfficial ? 'yes' : '' }}</td>
         <td class="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 darkclass:text-slate-400">
-            {{ $reading->created_at }}</td>
-        <td class="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 darkclass:text-slate-400">
-            {{ $reading->updated_at }}</td>
+            {{ $reading->date }}</td>
     </tr>
     
     @empty

@@ -30,7 +30,7 @@ class ReadingsIndexTest extends TestCase
 
     }
   
-    public function test_reading_index(): void
+    public function test_the_route_is_working(): void
     {
         $location = Location::factory()
         ->has(

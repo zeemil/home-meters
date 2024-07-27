@@ -7,7 +7,7 @@ import Chart from 'chart.js/auto'
     {
       type: 'bar',
       data: {
-        labels: data.map(row => row.created_at),
+        labels: data.map(row => row.date),
         datasets: [
           {
             label: 'Index records',

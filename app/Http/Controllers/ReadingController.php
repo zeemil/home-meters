@@ -21,17 +21,28 @@ class ReadingController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(Meter $meter)
     {
-        //
+        return view('Reading.create', compact('meter'));
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(Request $request, Meter $meter)
     {
-        //
+        
+        $validated = $request->validate([
+            'value' => 'required|numeric|gt:0',
+            'isOfficial' => 'required|boolean',
+            'date' => 'required|date'
+        ]);
+
+        
+        $reading = $meter->readings()->create($validated);
+        
+        
+        return redirect(route('readings.index', ['meter' => $meter->id]));
     }
 
     /**
