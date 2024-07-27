@@ -36,6 +36,9 @@
         }
     },
     "scripts": {
+        "phpstan":["./vendor/bin/phpstan analyse"],
+        "codestyle":["./vendor/bin/phpcs --standard=PSR12 app"],
+        "codestyle-fix": ["./vendor/bin/phpcbf --standard=PSR12 app"],
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
             "@php artisan package:discover --ansi"
