@@ -11,27 +11,15 @@ class CreateTest extends TestCase
 {
     use RefreshDatabase;
 
-    /**
-     * A basic view test example.
-     */
-    public function test_it_can_render(): void
-    {
-        $meter = Meter::factory()->create();
-
-        $contents = $this->view('reading.create', [
-            'meter' => $meter
-        ]);
-
-        $contents->assertSee('');
-    }
-
     public function test_the_route_is_working(): void
     {
         Location::factory()
         ->has(Meter::factory())
         ->create();
-        $response = $this->get('/meters/1/readings/create');
-        $response->assertStatus(200);
+        
+        $this->get('/meters/1/readings/create')
+        ->assertStatus(200)
+        ->assertSee('Add a reading for meter');
     }
 
     public function test_it_validates_the_data(): void

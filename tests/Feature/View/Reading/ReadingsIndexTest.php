@@ -24,7 +24,8 @@ class ReadingsIndexTest extends TestCase
 
 
         $contents = $this->view('reading.index', [
-            'meter' => $location->meters[0]
+            'meter' => $location->meters[0],
+            'readings' => $location->meters[0]->readings
         ]);
 
         $contents->assertSee($location->meters[0]->ean_code);

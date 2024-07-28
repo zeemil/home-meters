@@ -13,7 +13,7 @@ $headers = [
 @endphp
 
 @section('json-data')
-    const data = {!! $meter->readings()->orderBy('date')->get()->toJson() !!}
+    const data = {!! $readings->toJson() !!}
 @endsection
 
 @push('scripts')
@@ -34,14 +34,7 @@ $headers = [
     <thead>
     <tr>
         @foreach($headers as $header)
-        <th 
-        border-b 
-        dark:border-slate-600 
-        font-medium 
-        p-4 pl-8 pt-0 pb-3 
-        text-slate-400 
-        dark:text-slate-200 
-        text-left>
+        <th border-b dark:border-slate-600 font-medium  p-4 pl-8 pt-0 pb-3 text-slate-400 dark:text-slate-200 text-left>
            {{ $header }}
         </th>
         @endforeach
@@ -50,7 +43,7 @@ $headers = [
 
     <tbody>
 
-    @forelse ( $meter->readings as $reading )
+    @forelse ( $readings->sortByDesc('date') as $reading )
 
     <tr>
         <td class="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 darkclass:text-slate-400">

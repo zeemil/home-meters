@@ -14,8 +14,9 @@ class ReadingController extends Controller
      */
     public function index(Meter $meter)
     {
-        $meter->readings()->orderByDesc('created_at')->get();
-        return view('reading.index', compact('meter'));
+        $readings = $meter->readings()->orderBy('date')->get();
+
+        return view('reading.index', compact('meter', 'readings'));
     }
 
     /**
