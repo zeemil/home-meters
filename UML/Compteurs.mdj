@@ -1379,6 +1379,7 @@
 								"$ref": "AAAAAAGQVO3NLUnKBuQ="
 							},
 							"name": "unit",
+							"type": "ENUM",
 							"length": 0
 						},
 						{
