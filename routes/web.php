@@ -23,6 +23,6 @@ Route::resource('location/{location}/meters', MeterConntroller::class)->only([
 ]);
 
 Route::resource('meters/{meter}/readings', ReadingController::class)->only([
-    'index','create', 'store'
+    'index','create', 'store','destroy'
 ]);
 

@@ -8,7 +8,8 @@ $headers = [
     __('value'),
     __('Unit'),
     __('Is Official'),
-    __('Date')
+    __('Date'),
+    __('Actions')
 ];
 @endphp
 
@@ -56,6 +57,13 @@ $headers = [
             {{ $reading->isOfficial ? 'yes' : '' }}</td>
         <td class="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 darkclass:text-slate-400">
             {{ $reading->date }}</td>
+        <td class="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 darkclass:text-slate-400">
+            <form method="post" action="{{ route('readings.destroy',['meter' => $meter->id, 'reading'=> $reading->id]) }}">
+                @csrf
+                @method('delete')
+                <button type="submit"> {{__('delete')}}</button>
+            </form>
+        </td>
     </tr>
     
     @empty

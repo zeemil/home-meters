@@ -73,8 +73,10 @@ class ReadingController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Reading $reading)
+    public function destroy(Meter $meter, Reading $reading)
     {
-        //
+        $reading->deleteOrFail();
+
+        return to_route('readings.index',['meter' => $meter->id]);
     }
 }
