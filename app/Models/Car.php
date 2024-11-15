@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Car extends BaseModel
 {
@@ -21,4 +22,9 @@ class Car extends BaseModel
         'fuel_type',
         'tire_dimension',
     ];
+
+    public function carLog():HasMany
+    {
+        return $this->hasMany(CarLog::class);
+    }
 }
