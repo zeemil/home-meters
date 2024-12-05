@@ -20,10 +20,10 @@ class DatabaseSeeder extends Seeder
         Location::factory()->create();
         $now = Carbon::now()->format('Y-m-d H:i:s');
         
-        DB::unprepared('insert into meters(id,ean_code, name, unit, location_id, created_at, updated_at) values
-        (1,"541449020706144924", "électricité jour","kWh", 1, \''.$now.'\', \''.$now.'\'),
-        (2,"541449020706144924", "électricité nuit","kWh", 1, \''.$now.'\', \''.$now.'\'),
-        (3,"541449020706144931", "gaz","m³",1, \''.$now.'\', \''.$now.'\')');
+        DB::unprepared('insert into meters(id,ean_code, number, name, unit, location_id, created_at, updated_at) values
+        (1,"541449020706144924", null, "électricité jour","kWh", 1, \''.$now.'\', \''.$now.'\'),
+        (2,"541449020706144924", null, "électricité nuit","kWh", 1, \''.$now.'\', \''.$now.'\'),
+        (3,"541449020706144931", null, "gaz","m³",1, \''.$now.'\', \''.$now.'\')');
         
         DB::unprepared('insert into readings ( meter_id, value, isOfficial, date) values(1,4635, 0,"2024-06-14")');
         DB::unprepared('insert into readings ( meter_id, value, isOfficial, date) values(1,4533, 0,"2024-05-25")');
